@@ -381,6 +381,7 @@ html{ -webkit-text-size-adjust:100%; }
     box-sizing: border-box; margin-right: 0 !important;
   }
 }
+
 /* === 2×4에서 페어 정렬: (현재 | 목표) 한 줄 === */
 @media (max-width: 860px){
   /* 먼저 기본 위치값 초기화 */
