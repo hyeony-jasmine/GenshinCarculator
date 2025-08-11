@@ -218,7 +218,7 @@ body{
 @media (max-width: 860px){
   .character-card .fields select[data-field],
   .character-card .fields input[data-field]{
-    width: calc(100% - 10px);
+    width: calc(100% - 5px);
     margin-right: 10px;
     height: 28px;
     padding: 2px 7px;
@@ -297,87 +297,36 @@ body{
   */
 }
 
-/* === 모바일 넘침 방지: 2×4 유지하되 칸 최소폭 없애기 === */
-
-/* 2열 고정(태블릿/폰) + 각 칸은 min-content 제한 없이 줄어들게 */
+/* === 2×4: 왼쪽/오른쪽 열 동일 폭 === */
 @media (max-width: 860px){
+  :root{
+    --ctrl-w: 90px;       /* 드롭다운 가로폭(필요시 144/140/136px로 줄여서 맞추기) */
+    --col-gap: 10px;       /* 두 열 사이 간격 */
+    --card-gutter: 12px;   /* 카드 오른쪽 내부 여백 */
+  }
+
+  .character-card{ padding-right: var(--card-gutter); }
+
+  /* 두 열 모두 같은 폭, 넘치면 그 안에서 줄어듦 */
   .character-card .fields{
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* ← 핵심 */
-    gap: 8px;
+    grid-template-columns: repeat(2, minmax(0, var(--ctrl-w))) !important;
+    column-gap: var(--col-gap);
+    justify-content: end;  /* 카드 오른쪽에 딱 붙게. 가운데 두고 싶으면 center */
     width: 100%;
   }
-  /* iOS가 줄이도록 강제 */
-  .character-info,
-  .character-card .fields,
-  .character-card .fields .field{ min-width: 0; }
 
-  /* 컨트롤 자체도 컴팩트 */
-  .character-card .field select,
-  .character-card .field input{
-    width: 100%;
-    max-width: 100%;
-    min-width: 2px;
-    height: 28px;
-    padding: 2px 6px;
-    font-size: 12px;
-    box-sizing: border-box;
+  /* 모든 라벨/컨트롤 폭 통일 */
+  .character-card .fields .field{ align-items: flex-start; min-width: 0; }
+  .character-card .fields .field label{
+    max-width: var(--ctrl-w);
+    white-space: normal; word-break: break-word; line-height: 1.2;
+    margin-bottom: 4px; font-size: 12px;
   }
-
-  /* 카드 좌측 영역도 더 작게 */
-  .character-card{ grid-template-columns: 64px minmax(0,1fr); padding-right: 8px; }
-  .character-img{ width:64px; height:64px; }
-}
-
-/* 아주 좁은 디바이스에서도 1×8 금지(2×4 유지) */
-@media (max-width: 420px){
-  .character-card .fields{
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
-/* 라벨을 컨트롤 폭에 맞춰 고정 + 말줄임 처리 (겹침 방지) */
-.character-card .fields{ justify-items: start; }             /* 칸 안에서 좌측 정렬 */
-.character-card .fields .field{ align-items: flex-start; min-width:0; }
-
-:root{
-  /* 컨트롤/라벨 공통 폭 – 필요하면 숫자만 바꿔도 됨 */
-  --ctrl-w: 190px;               /* 데스크톱 */
-}
-@media (max-width: 980px){ :root{ --ctrl-w: 170px; } }       /* 태블릿 */
-@media (max-width: 860px){ :root{ --ctrl-w: 148px; } }       /* 폰 세로 */
-@media (max-width: 420px){ :root{ --ctrl-w: 138px; } }       /* 초소형 */
-
-/* ★ 라벨 폭을 컨트롤과 동일하게 맞추고, 넘치면 … 로 처리 */
-.character-card .fields .field label{
-  display:block;
-  width: var(--ctrl-w) !important;      /* 컨트롤 폭과 동일 */
-  max-width:100%;
-  white-space: nowrap;                   /* 한 줄 유지 */
-  overflow: hidden;                      /* 넘침 숨김 */
-  text-overflow: ellipsis;               /* … 표시 */
-  margin-bottom: 4px;
-  line-height: 1.2;
-}
-
-/* 컨트롤도 동일 폭 */
-.character-card .fields select[data-field],
-.character-card .fields input[data-field]{
-  width: var(--ctrl-w) !important;
-  max-width: 100%;
-  min-width: 0;
-  height: 30px;
-  padding: 3px 8px;
-  font-size: 12.5px;
-  box-sizing: border-box;
-}
-@media (max-width: 860px){
   .character-card .fields select[data-field],
   .character-card .fields input[data-field]{
-    height: 28px; padding: 2px 7px; font-size: 12px;
+    width: var(--ctrl-w) !important;
+    min-width: 0; height: 28px; padding: 2px 7px; font-size: 12px;
+    box-sizing: border-box; margin-right: 0 !important;
   }
-}
-
-/* 아주 좁은 화면에서 라벨도 살짝 더 작게 */
-@media (max-width: 420px){
-  .character-card .fields .field label{ font-size: 12px; }
 }
