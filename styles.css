@@ -519,3 +519,72 @@ body{
 @media (max-width: 380px){
   .fields{ grid-template-columns: 1fr !important; }
 }
+/* 1) 그라디언트 겹침 제거: 카드/리스트/사이드 패널은 단색(반투명)으로 통일 */
+.card-list,
+.character-card,
+.total-panel{
+  background: rgba(255,255,255,0.03) !important;
+  background-image: none !important;
+}
+
+/* 2) iOS 합성(Compositing) 이슈 회피: 별도 레이어로 올리고 라운딩 경계 보정 */
+.card-list,
+.character-card,
+.total-panel{
+  -webkit-transform: translateZ(0); /* 하드웨어 합성 유도 */
+  backface-visibility: hidden;
+  background-clip: padding-box;
+}
+
+/* 3) 터치 디바이스에선 hover 변형 끄기(변형+그림자도 띠를 유발할 수 있음) */
+@media (hover: none){
+  .character-card:hover{
+    transform: none !important;
+    /* 필요하면 그림자도 살짝 완화 */
+    box-shadow: 0 8px 20px rgba(2,6,23,0.55);
+  }
+}
+
+/* 4) 페이지 최상단 그라디언트도 띠가 보이면, 살짝 완화(선택) */
+body{
+  background: linear-gradient(180deg, var(--bg), #07101a 60%) fixed;
+}
+
+/* === 아주 좁은 화면(대부분의 모바일 세로)에서는 1열로 안전하게 === */
+@media (max-width: 520px){
+  /* 카드 레이아웃 자체도 살짝 컴팩트하게 */
+  .character-card{
+    grid-template-columns: 72px 1fr;  /* 아바타 더 작게 + 내용 */
+  }
+  .character-img{ width:72px; height:72px; }
+
+  /* 필드: 2칸 → 1칸으로 전환 (깨짐 방지) */
+  .fields{
+    display: grid !important;
+    grid-template-columns: 1fr !important;   /* 한 줄씩 내려가게 */
+    grid-auto-rows: minmax(0,auto);
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* 각 필드와 입력/셀렉트가 부모 폭을 100% 채우도록 */
+  .fields .field{
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .field select,
+  .field input{
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* 긴 라벨은 줄바꿈 허용 */
+  .field label{ white-space: normal; }
+
+  /* 이름줄(원소/시리즈 아이콘)이 너무 좁아지면 감춤(선택) */
+  .name-row [data-field="element"] img,
+  .name-row [data-field="element"] .char-sub{ display:none; }
+}
+
