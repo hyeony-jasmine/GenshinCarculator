@@ -640,6 +640,16 @@
     "region": "natlan"
     },
      {
+    "id": "aloy",
+    "name_en": "Aloy",
+    "name_kr": "에일로이",
+    "element": "Cyro",
+    "weapon": "Bow",
+    "image": "images/aloy.png",
+    "day": "mon",
+    "region": "mond"
+    },
+     {
     "id": "collei",
     "name_en": "Collei",
     "name_kr": "콜레이",
