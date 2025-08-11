@@ -385,39 +385,95 @@ body{
 .total-panel .total-value{
   line-height: var(--sum-icon);        /* 오른쪽 숫자도 동일 라인 높이 */
 }
-/* ===== Mobile: 2칸(현재 / 목표)로 딱딱 맞추기 ===== */
+/* ===== 모바일: 카드 안에서 2칸 레이아웃 + 입력/버튼 유동 크기 ===== */
+
+/* 카드 콘텐츠가 넘칠 때 잘리지 않도록 */
+.character-card{ overflow: hidden; }
+
+/* 2칸(현재 | 목표) 그리드: 넘침 방지용 minmax(0,1fr) */
 @media (max-width: 560px){
-  /* 필드 영역을 flex → grid 로 전환 */
   .fields{
-    display: grid;
-    grid-template-columns: 1fr 1fr;  /* 두 칸 */
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
     grid-auto-rows: minmax(0, auto);
-    gap: 8px 10px;                   /* 행/열 간격 */
+    gap: 8px 10px;
+    overflow: hidden;
   }
-  .field{ min-width: 0; }            /* 오버플로 방지 */
+  .field{ min-width: 0; }                    /* flex/grid 넘침 방지 */
+  .field select, .field input{
+    width: 100%;
+    min-width: 0;
+    /* 폭이 줄면 패딩/폰트도 같이 줄어들게 */
+    height: auto;
+    padding: clamp(6px, 1.8vw, 10px) clamp(8px, 2.2vw, 12px);
+    font-size: clamp(12px, 3.6vw, 14px);
+  }
 
-  /* 현재/목표 페어를 같은 행으로 배치 (DOM 순서를 이용) */
-  .fields .field:nth-child(1){ grid-column:1; grid-row:1; } /* 현재 레벨 */
-  .fields .field:nth-child(5){ grid-column:2; grid-row:1; } /* 목표 레벨 */
+  /* 현재/목표 페어 강제 매칭 (DOM 순서 기준) */
+  .fields > .field:nth-of-type(1){ grid-column:1; grid-row:1; } /* 현재 레벨 */
+  .fields > .field:nth-of-type(5){ grid-column:2; grid-row:1; } /* 목표 레벨 */
 
-  .fields .field:nth-child(2){ grid-column:1; grid-row:2; } /* 현재 일반공격 */
-  .fields .field:nth-child(6){ grid-column:2; grid-row:2; } /* 목표 일반공격 */
+  .fields > .field:nth-of-type(2){ grid-column:1; grid-row:2; } /* 현재 일반공격 */
+  .fields > .field:nth-of-type(6){ grid-column:2; grid-row:2; } /* 목표 일반공격 */
 
-  .fields .field:nth-child(3){ grid-column:1; grid-row:3; } /* 현재 원소전투 */
-  .fields .field:nth-child(7){ grid-column:2; grid-row:3; } /* 목표 원소전투 */
+  .fields > .field:nth-of-type(3){ grid-column:1; grid-row:3; } /* 현재 원소전투 */
+  .fields > .field:nth-of-type(7){ grid-column:2; grid-row:3; } /* 목표 원소전투 */
 
-  .fields .field:nth-child(4){ grid-column:1; grid-row:4; } /* 현재 원소폭발 */
-  .fields .field:nth-child(8){ grid-column:2; grid-row:4; } /* 목표 원소폭발 */
-}
+  .fields > .field:nth-of-type(4){ grid-column:1; grid-row:4; } /* 현재 원소폭발 */
+  .fields > .field:nth-of-type(8){ grid-column:2; grid-row:4; } /* 목표 원소폭발 */
 
-/* 카드 하단 컨트롤(미리보기/삭제)이 카드 안에 붙도록 유지 */
-@media (max-width: 980px){
+  /* 카드 하단(미리보기/삭제)도 가로폭에 맞춰 유동 크기 */
   .character-card .card-controls{
     grid-column: 1 / -1;
     width: 100%;
     padding: 6px 4px 0;
+    gap: 8px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+  .cost-preview{
+    min-width: 0;
+    padding: clamp(6px, 1.8vw, 10px) clamp(8px, 2.4vw, 12px);
+    font-size: clamp(12px, 3.8vw, 16px);
+  }
+  .card-actions .btn{
+    flex: 1 1 0;                 /* 공간에 맞게 줄어듦 */
+    min-width: 0;                /* iOS 폭 고정 방지 */
+    padding: clamp(6px, 1.8vw, 10px) clamp(10px, 3vw, 14px);
+    font-size: clamp(12px, 3.6vw, 14px);
+  }
+}
+
+/* 아주 작은 화면(아이폰 SE 등)은 1열로 전환 */
+@media (max-width: 380px){
+  .fields{ grid-template-columns: 1fr; }
+}
+
+/* 헤더 버튼 텍스트 줄바꿈 방지 + 정렬 보정 */
+.header-actions .btn{
+  white-space: nowrap;        /* 버튼 안에서 줄바꿈 금지 */
+  display: inline-flex;
+  align-items: center;        /* 수직 중앙 */
+  justify-content: center;
+  line-height: 1;             /* 베이스라인 들뜸 방지 */
+  height: 44px;               /* 검색 입력과 높이 맞춤(원하면 36~44px로 조절) */
+  padding: 10px 16px;         /* 높이를 줄이면 패딩도 같이 줄여줘 */
+}
+
+/* 검색 입력 높이도 버튼과 맞춰주면 라인이 반듯해짐 */
+.header-actions input,
+.header-actions select {
+  height: 44px;
+}
+
+/* 좁은 화면에서는 버튼을 줄로 내려도 내부 글자는 한 줄 유지 */
+@media (max-width: 720px){
+  .app-header { flex-wrap: wrap; }
+  .header-actions { flex-wrap: wrap; width: 100%; gap: 8px; }
+  .header-actions > *:first-child{ flex: 1 1 100%; } /* 검색창은 한 줄 차지 */
+  .header-actions .btn{
+    min-width: 120px;         /* 너무 좁아져서 글자 깨지는 것 방지 */
+    flex: 0 1 auto;           /* 공간 부족하면 다음 줄로 내려감 */
   }
 }
