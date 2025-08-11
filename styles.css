@@ -385,3 +385,41 @@ body{
 .total-panel .total-value{
   line-height: var(--sum-icon);        /* 오른쪽 숫자도 동일 라인 높이 */
 }
+/* ===== Mobile layout fixes ===== */
+
+/* 기본: 카드가 자기 안에서 잘 줄어들도록 */
+.character-card { overflow: hidden; }
+
+/* 헤더 버튼도 줄바꿈 허용 */
+@media (max-width: 560px){
+  .app-header { flex-wrap: wrap; }
+  .header-actions { flex-wrap: wrap; width: 100%; gap: 8px; }
+  .header-actions .btn { flex: 1 1 auto; }
+}
+
+/* 카드 내부 레이아웃 정리 */
+@media (max-width: 980px){
+  .character-card{
+    grid-template-columns: 84px 1fr;   /* 아바타 + 내용 */
+    grid-template-rows: auto auto;     /* 필드 + 하단 컨트롤 */
+  }
+  /* 하단(미리보기/삭제) 줄을 카드 내부 전체 폭으로 이동 */
+  .character-card .card-controls{
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 6px 4px 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* 필드들이 너무 넓어져서 넘치지 않게 */
+  .fields{ gap: 8px; }
+  .field{ min-width: 0; flex: 1 1 calc(50% - 8px); }  /* 2열로 배치 */
+  .field select, .field input { width: 100%; }
+  .character-info{ min-width: 0; } /* flex 오버플로우 방지 */
+}
+
+/* 아주 작은 화면에서는 1열로 */
+@media (max-width: 380px){
+  .field{ flex: 1 1 100%; }
+}
