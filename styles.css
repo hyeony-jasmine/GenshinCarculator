@@ -477,3 +477,45 @@ body{
     flex: 0 1 auto;           /* 공간 부족하면 다음 줄로 내려감 */
   }
 }
+
+/* ===== FIX: 모바일에서 필드 폭이 잘리는 문제 보정 ===== */
+
+/* 카드 본문이 줄어들 수 있게 (iOS에서 중요) */
+@media (max-width: 980px){
+  .character-info{ min-width: 0; width: 100%; }
+}
+
+/* 2칸 레이아웃 + 필드/입력 폭 강제 확장 */
+@media (max-width: 560px){
+  .fields{
+    display: grid !important;                           /* flex → grid 강제 전환 */
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr); /* 두 칸, 넘침 방지 */
+    grid-auto-rows: minmax(0,auto);
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* 각 필드가 칸 너비를 100% 쓰도록 */
+  .fields .field{
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 입력/셀렉트가 부모 폭을 정확히 채우도록 */
+  .field select,
+  .field input{
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* 이름줄이 너무 좁아지면 아이콘/문구가 말줄임되게 */
+  .character-info .name-row{ flex-wrap: wrap; min-width: 0; }
+  .character-info .char-name{ max-width: 100%; }
+}
+
+/* 아주 작은 화면은 1열로 */
+@media (max-width: 380px){
+  .fields{ grid-template-columns: 1fr !important; }
+}
