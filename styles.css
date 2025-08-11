@@ -199,42 +199,101 @@ body{
     grid-template-columns: repeat(2, minmax(120px, 1fr)) !important;
   }
 }
-/* === 현재/목표 드롭다운 컴팩트 사이즈 === */
-.character-card .fields{ gap: 10px; } /* 살짝 간격 축소 */
-.character-card .field label{
-  margin-bottom: 4px;          /* 라벨-컨트롤 간격 줄이기 */
+
+/* === 모든 '현재/목표' 드롭다운 컴팩트화 + 우측 여유로 잘림 방지 === */
+.character-card .fields select[data-field],
+.character-card .fields input[data-field]{
+  display:block;
+  width: calc(100% - 8px);   /* 칸보다 살짝 좁게 → 우측 여유 */
+  margin-right: 8px;
+  min-width: 0;              /* iOS 폭 고정 방지 */
+  height: 30px;              /* ↓ 전체적으로 낮춤 */
+  padding: 3px 8px;          /* ↓ 패딩 축소 */
+  font-size: 12.5px;         /* ↓ 폰트 축소 */
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* 태블릿/폰에선 한 단계 더 작게 */
+@media (max-width: 860px){
+  .character-card .fields select[data-field],
+  .character-card .fields input[data-field]{
+    width: calc(100% - 10px);
+    margin-right: 10px;
+    height: 28px;
+    padding: 2px 7px;
+    font-size: 12px;
+  }
+}
+
+/* 라벨-컨트롤 간격도 조금 줄이기 */
+.character-card .fields .field label{
+  margin-bottom: 4px;
   font-size: 12px;
 }
+/* 이름을 최우선으로 보이게 */
+.character-card .name-row{
+  display:flex; align-items:center; gap:8px; flex-wrap:nowrap;
+  min-width:0;
+}
+.character-card [data-field="name"]{
+  flex:1 1 auto; min-width:0;      /* 줄어들 수 있게 */
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+/* 원소 텍스트/배지, 작은 책 아이콘들은 보조 */
+.character-card [data-field="element"]{ flex:0 0 auto; }
+@media (max-width: 680px){
+  .character-card [data-field="element"]{ display:none; }     /* Pyro 등 숨김 */
+  .character-card .name-row > div{ display:none; }            /* 가르침/인도/철학 아이콘 숨김 */
+}
+/* 컨트롤 최대 가로폭 제한(해상도에 맞게 축소) */
+:root{ --ctrl-max: clamp(120px, 40vw, 190px); } /* 최소 120px ~ 최대 190px */
 
-/* 기본(데스크톱): 약간 작게 */
+.character-card .fields{ justify-items: start; } /* 칸 안에서 좌측 정렬 */
 .character-card .field select,
 .character-card .field input{
-  display:block;
-  width:100%;
-  min-width:0;
-  height:32px;                 /* ↓ 36 → 32 */
-  padding:4px 8px;             /* ↓ 6 10 → 4 8 */
-  font-size:13px;              /* ↓ 14 → 13 */
-  border-radius:8px;
+  width: min(100%, var(--ctrl-max));   /* 칸보다 작게 */
+  max-width: var(--ctrl-max);
+  min-width: 0;                         /* iOS 폭 고정 방지 */
 }
 
-/* 태블릿/폰에서 더 콤팩트하게 */
+/* 모바일에서 한 단계 더 줄이기 */
 @media (max-width: 860px){
-  .character-card .fields{ gap: 8px; }
-  .character-card .field select,
-  .character-card .field input{
-    height:30px;
-    padding:3px 8px;
-    font-size:12px;
-  }
+  :root{ --ctrl-max: clamp(120px, 44vw, 170px); }
+}
+/* 이름은 항상 보이게(아이콘보다 우선) */
+.character-card .name-row{
+  display:flex; align-items:center; gap:8px; min-width:0;
+}
+.character-card [data-field="name"]{
+  flex:1 1 auto; min-width:0;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.character-card [data-field="element"]{ flex:0 0 auto; }        /* Pyro 등 텍스트 */
+
+/* 책 아이콘 묶음(가르침/인도/철학) – 점진적 숨김 */
+.character-card .name-row > div{ flex:0 0 auto; display:inline-flex; gap:6px; }
+
+/* 먼저 크기 조금 줄이고… */
+@media (max-width: 940px){
+  .character-card .name-row > div img{ width:22px !important; height:22px !important; }
 }
 
-/* 아주 좁은 폰 */
-@media (max-width: 420px){
-  .character-card .field select,
-  .character-card .field input{
-    height:28px;
-    padding:2px 7px;
-    font-size:11.5px;
-  }
+/* 더 좁아지면 ‘철학’(마지막)부터 숨김 */
+@media (max-width: 860px){
+  .character-card .name-row > div img:nth-last-child(1){ display:none !important; } /* 철학 */
 }
+
+/* 더 좁으면 ‘인도’까지 숨김  */
+@media (max-width: 780px){
+  .character-card .name-row > div img:nth-last-child(2){ display:none !important; } /* 인도 */
+}
+
+/* 아주 좁으면 책 아이콘 전부 숨김(이름만 남김) */
+@media (max-width: 720px){
+  .character-card .name-row > div img{ display:none !important; }
+  /* 필요하면 원소 텍스트도 감추고 싶을 때: 아래 주석 해제
+  .character-card [data-field="element"]{ display:none !important; }
+  */
+}
+
