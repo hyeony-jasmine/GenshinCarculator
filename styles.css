@@ -312,7 +312,7 @@ body{
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, var(--ctrl-w))) !important;
     column-gap: var(--col-gap);
-    justify-content: end;  /* 카드 오른쪽에 딱 붙게. 가운데 두고 싶으면 center */
+    justify-content: center;  /* 카드 오른쪽에 딱 붙게. 가운데 두고 싶으면 center */
     width: 100%;
   }
 
@@ -327,6 +327,57 @@ body{
   .character-card .fields input[data-field]{
     width: var(--ctrl-w) !important;
     min-width: 0; height: 28px; padding: 2px 7px; font-size: 12px;
+    box-sizing: border-box; margin-right: 0 !important;
+  }
+}
+
+/* 공통: iOS가 텍스트를 임의로 키워 가로폭 깨지는 것 방지 */
+html{ -webkit-text-size-adjust:100%; }
+
+/* === 2×4 구간: 좌/우 열 같은 폭 + 라벨 단어 단위 줄바꿈 === */
+@media (max-width: 860px){
+  :root{
+    --ctrl-w: 80px;     /* 드롭다운 폭: 잘리면 144/140/136px로 조정 */
+    --col-gap: 10px;
+    --card-gutter: 12px;
+  }
+
+  .character-card{ padding-right: var(--card-gutter); }
+
+  /* 두 열 모두 동일 폭으로 고정 */
+  .character-card .fields{
+    display: grid !important;
+    grid-template-columns: repeat(2, var(--ctrl-w)) !important;
+    column-gap: var(--col-gap);
+    justify-content: start;   /* 카드 오른쪽에 맞춤(원하면 center) */
+    width: 100%;
+  }
+
+  /* ★ 필드 컨테이너 자체 폭을 열 폭과 동일하게 고정 (초기 페인트 안전) */
+  .character-card .fields .field{
+    width: var(--ctrl-w);
+    min-width: var(--ctrl-w);
+    max-width: var(--ctrl-w);
+    align-items: flex-start;
+  }
+
+  /* 라벨: 절대 말줄임(...) 금지, 단어 단위로만 줄바꿈(한글/공백 기준) */
+  .character-card .fields .field label{
+    white-space: normal !important;
+    word-break: keep-all !important;     /* ← 핵심: 글자 단위로 쪼개지지 않음 */
+    overflow: visible !important;
+    text-overflow: clip !important;
+    line-height: 1.28;
+    margin-bottom: 4px;
+    font-size: 12.5px;
+  }
+
+  /* 컨트롤: 열 폭을 정확히 사용 */
+  .character-card .fields select[data-field],
+  .character-card .fields input[data-field]{
+    width: var(--ctrl-w) !important;
+    min-width: 0;
+    height: 28px; padding: 2px 7px; font-size: 12px;
     box-sizing: border-box; margin-right: 0 !important;
   }
 }
