@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>캐릭터 육성 총 재화 계산</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root{ --max-width: 1320px; }
+    .character-card{ grid-template-columns: 96px 1fr minmax(160px, auto); }
+    .fields { display:grid; grid-template-columns: repeat(4, minmax(140px, 1fr)); gap:10px; margin-top:8px; }
+    /* 헤더 입력 기본 스타일 보정 */
+    #search{ height:36px; border-radius:8px; padding:6px 10px; border:1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02); color:var(--text); }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="app">
+      <header class="app-header">
+        <div class="app-title">캐릭터 육성 총 재화 계산기</div>
+        <div class="header-actions">
+          <input id="search" placeholder="캐릭터 검색/추가 (이름)" list="char-list" />
+          <datalist id="char-list"></datalist>
+          <button class="btn btn-primary" id="btn-add">목록에 추가</button>
+          <button class="btn btn-ghost" id="btn-clear">모두 삭제</button>
+        </div>
+      </header>
+
+      <main class="card-list" id="cards">
+        <div class="empty-state" id="empty">캐릭터를 추가해 육성 목표를 설정하세요.</div>
+      </main>
+
+      <aside class="total-panel" id="totals">
+        <h3>총 필요 재화</h3>
+        <div class="total-row"><span>모라</span><span class="total-value" id="sum-mora">0</span></div>
+        <div class="total-row"><span>경험치</span><span class="total-value" id="sum-exp">0</span></div>
+        <div class="total-row"><span>보라책(영웅의 경험)</span><span class="total-value" id="sum-talent-books">0</span></div>
+      </aside>
+    </div>
+  </div>
+
+  <template id="tpl-card">
+    <div class="character-card" data-id="">
+      <div class="character-img"><img alt="character" /></div>
+      <div class="character-info">
+        <div class="name-row">
+          <div class="char-name" data-field="name">-</div>
+          <div class="char-sub" data-field="element">-</div>
+        </div>
+        <div class="fields">
+          <div class="field"><label>현재 레벨</label><select data-field="level-current"></select></div>
+          <div class="field"><label>현재 일반공격</label><select data-field="talent-na-current"></select></div>
+          <div class="field"><label>현재 원소전투</label><select data-field="talent-skill-current"></select></div>
+          <div class="field"><label>현재 원소폭발</label><select data-field="talent-burst-current"></select></div>
+          <div class="field"><label>목표 레벨</label><select data-field="level-target"></select></div>
+          <div class="field"><label>목표 일반공격</label><select data-field="talent-na-target"></select></div>
+          <div class="field"><label>목표 원소전투</label><select data-field="talent-skill-target"></select></div>
+          <div class="field"><label>목표 원소폭발</label><select data-field="talent-burst-target"></select></div>
+        </div>
+      </div>
+      <div class="card-controls">
+        <div class="cost-preview" data-field="preview">0</div>
+        <div class="card-actions">
+          <button class="btn btn-danger" data-action="remove">삭제</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 분리된 스크립트 불러오기 -->
+  <script src="app.js"></script>
+</body>
+</html>

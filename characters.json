@@ -1,0 +1,1002 @@
+[
+    {
+    "id": "amber",
+    "name_en": "Amber",
+    "name_kr": "엠버",
+    "element": "Pyro",
+    "weapon": "Bow",
+    "image": "images/amber.png",
+    "day": "mon",
+    "region": "mond"
+    },
+    {
+    "id": "xiangling",
+    "name_en": "Xiangling",
+    "name_kr": "향릉",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "image": "images/xiangling.png",
+    "day": "tue",
+    "region": "liyue"
+    },
+    {
+    "id": "bennett",
+    "name_en": "Bennett",
+    "name_kr": "베넷",
+    "element": "Pyro",
+    "weapon": "Sword",
+    "image": "images/bennett.png",
+    "day": "tue",
+    "region": "mond"
+    },
+    {
+    "id": "diluc",
+    "name_en": "Diluc",
+    "name_kr": "다이루크",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "image": "images/diluc.png",
+    "day": "tue",
+    "region": "mond"
+    },
+    {
+    "id": "klee",
+    "name_en": "Klee",
+    "name_kr": "클레",
+    "element": "Pyro",
+    "weapon": "Catalyst",
+    "image": "images/klee.png",
+    "day": "mon",
+    "region": "mond"
+    },
+    {
+    "id": "xinyan",
+    "name_en": "Xinyan",
+    "name_kr": "신염",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "image": "images/xinyan.png",
+    "day": "tue",
+    "region": "liyue"
+    },
+    {
+    "id": "hutao",
+    "name_en": "Hutao",
+    "name_kr": "호두",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "image": "images/hutao.png",
+    "day": "tue",
+    "region": "liyue"
+    },
+    {
+    "id": "yanfei",
+    "name_en": "Yanfei",
+    "name_kr": "연비",
+    "element": "Pyro",
+    "weapon": "Catalyst",
+    "image": "images/yanfei.png",
+    "day": "wen",
+    "region": "liyue"
+    },
+    {
+    "id": "yoimiya",
+    "name_en": "Yoimiya",
+    "name_kr": "요이미야",
+    "element": "Pyro",
+    "weapon": "Bow",
+    "image": "images/yoimiya.png",
+    "day": "mon",
+    "region": "inazma"
+    },
+    {
+    "id": "thoma",
+    "name_en": "Thoma",
+    "name_kr": "토마",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "image": "images/thoma.png",
+    "day": "mon",
+    "region": "inazma"
+    },
+    {
+    "id": "dehya",
+    "name_en": "Dehya",
+    "name_kr": "데히야",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "image": "images/dehya.png",
+    "day": "wen",
+    "region": "sumeru"
+    },
+    {
+    "id": "lyney",
+    "name_en": "Lyney",
+    "name_kr": "리니",
+    "element": "Pyro",
+    "weapon": "Bow",
+    "image": "images/lyney.png",
+    "day": "mon",
+    "region": "fontaine"
+    },
+    {
+    "id": "chev",
+    "name_en": "Chevreuse",
+    "name_kr": "슈브르즈",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "image": "images/chev.png",
+    "day": "wen",
+    "region": "fontaine"
+    },
+    {
+    "id": "gaming",
+    "name_en": "Gaming",
+    "name_kr": "가명",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "image": "images/gaming.png",
+    "day": "mon",
+    "region": "liyue"
+    },
+    {
+    "id": "arrleccino",
+    "name_en": "Arrlecchino",
+    "name_kr": "아를레키노",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "image": "images/arrlecchino.png",
+    "day": "wen",
+    "region": "fontaine"
+    },
+    {
+    "id": "mavuika",
+    "name_en": "Mavuika",
+    "name_kr": "마비카",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "image": "images/mavuika.png",
+    "day": "mon",
+    "region": "natlan"
+    },
+    {
+    "id": "barbara",
+    "name_en": "Barbara",
+    "name_kr": "바바라",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "image": "images/barbara.png",
+    "day": "mon",
+    "region": "mond"
+    },
+    {
+    "id": "xingqiu",
+    "name_en": "Xingqiu",
+    "name_kr": "행추",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "image": "images/xingqiu.png",
+    "day": "wen",
+    "region": "liyue"
+    },
+    {
+    "id": "mona",
+    "name_en": "Mona",
+    "name_kr": "모나",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "image": "images/mona.png",
+    "day": "tue",
+    "region": "mond"
+    },
+    {
+    "id": "tartaglia",
+    "name_en": "Tartaglia",
+    "name_kr": "타르탈리아",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "image": "images/tartaglia.png",
+    "day": "mon",
+    "region": "mond"
+    },
+    {
+    "id": "kokomi",
+    "name_en": "Sangonomiya Kokomi",
+    "name_kr": "산고노미야 코코미",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "image": "images/kokomi.png",
+    "day": "mon",
+    "region": "inazma"
+    },
+    {
+    "id": "ayato",
+    "name_en": "Kamisato Ayato",
+    "name_kr": "카미사토 아야토",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "image": "images/ayato.png",
+    "day": "tue",
+    "region": "inazma"
+    },
+    {
+    "id": "yelan",
+    "name_en": "Yelan",
+    "name_kr": "야란",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "image": "images/yelan.png",
+    "day": "mon",
+    "region": "liyue"
+    },
+    {
+    "id": "candace",
+    "name_en": "Candace",
+    "name_kr": "캔디스",
+    "element": "Hydro",
+    "weapon": "Polearm",
+    "image": "images/candace.png",
+    "day": "mon",
+    "region": "sumeru"
+    },
+    {
+    "id": "nilou",
+    "name_en": "Nilou",
+    "name_kr": "닐루",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "image": "images/nilou.png",
+    "day": "wen",
+    "region": "sumeru"
+    },
+    {
+    "id": "neuvi",
+    "name_en": "Neuvillette",
+    "name_kr": "느비예트",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "image": "images/neuvi.png",
+    "day": "mon",
+    "region": "fontaine"
+    },
+    {
+    "id": "furina",
+    "name_en": "Furina",
+    "name_kr": "푸리나",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "image": "images/furina.png",
+    "day": "tue",
+    "region": "fontaine"
+    },
+     {
+    "id": "sigewinne",
+    "name_en": "Sigewinne",
+    "name_kr": "시그윈",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "image": "images/sigewinne.png",
+    "day": "mon",
+    "region": "fontaine"
+    },
+     {
+    "id": "mualani",
+    "name_en": "Mualani",
+    "name_kr": "말라니",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "image": "images/mualani.png",
+    "day": "mon",
+    "region": "natlan"
+    },
+     {
+    "id": "dahlia",
+    "name_en": "Dahlia",
+    "name_kr": "달리아",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "image": "images/dahlia.png",
+    "day": "wen",
+    "region": "mond"
+    },
+     {
+    "id": "lisa",
+    "name_en": "Lisa",
+    "name_kr": "리사",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "image": "images/lisa.png",
+    "day": "wen",
+    "region": "mond"
+    },
+    {
+    "id": "razor",
+    "name_en": "Razor",
+    "name_kr": "레이저",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "image": "images/razor.png",
+    "day": "tue",
+    "region": "mond"
+    },
+     {
+    "id": "beidou",
+    "name_en": "Beidou",
+    "name_kr": "북두",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "image": "images/beidou.png",
+    "day": "wen",
+    "region": "liyue"
+    },
+     {
+    "id": "fischl",
+    "name_en": "Fischl",
+    "name_kr": "피슬",
+    "element": "Electro",
+    "weapon": "Bow",
+    "image": "images/fischl.png",
+    "day": "wen",
+    "region": "mond"
+    },
+     {
+    "id": "keqing",
+    "name_en": "Keqing",
+    "name_kr": "각청",
+    "element": "Electro",
+    "weapon": "Sword",
+    "image": "images/keqing.png",
+    "day": "mon",
+    "region": "liyue"
+    },
+     {
+    "id": "sara",
+    "name_en": "Kujou Sara",
+    "name_kr": "쿠죠 사라",
+    "element": "Electro",
+    "weapon": "Bow",
+    "image": "images/sara.png",
+    "day": "tue",
+    "region": "inazma"
+    },
+     {
+    "id": "raiden",
+    "name_en": "Raiden Shogun",
+    "name_kr": "라이덴 쇼군",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "image": "images/raiden.png",
+    "day": "wen",
+    "region": "inazma"
+    },
+     {
+    "id": "miko",
+    "name_en": "Yae Miko",
+    "name_kr": "야에 미코",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "image": "images/miko.png",
+    "day": "wen",
+    "region": "inazma"
+    },
+     {
+    "id": "shinobu",
+    "name_en": "Kuki Shinobu",
+    "name_kr": "쿠키 시노부",
+    "element": "Electro",
+    "weapon": "Sword",
+    "image": "images/shinobu.png",
+    "day": "wen",
+    "region": "inazma"
+    },
+     {
+    "id": "dori",
+    "name_en": "Dori",
+    "name_kr": "도리",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "image": "images/dori.png",
+    "day": "tue",
+    "region": "sumeru"
+    },
+     {
+    "id": "cyno",
+    "name_en": "Cyno",
+    "name_kr": "사이노",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "image": "images/cyno.png",
+    "day": "mon",
+    "region": "sumeru"
+    },
+     {
+    "id": "sethos",
+    "name_en": "Sethos",
+    "name_kr": "세토스",
+    "element": "Electro",
+    "weapon": "Bow",
+    "image": "images/sethos.png",
+    "day": "wen",
+    "region": "sumeru"
+    },
+     {
+    "id": "clorinde",
+    "name_en": "Clorinde",
+    "name_kr": "클로린드",
+    "element": "Electro",
+    "weapon": "Sword",
+    "image": "images/clorinde.png",
+    "day": "tue",
+    "region": "fontaine"
+    },
+     {
+    "id": "ororon",
+    "name_en": "Ororon",
+    "name_kr": "올로룬",
+    "element": "Electro",
+    "weapon": "Bow",
+    "image": "images/ororon.png",
+    "day": "tue",
+    "region": "natlan"
+    },
+     {
+    "id": "iansan",
+    "name_en": "Iansan",
+    "name_kr": "얀사",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "image": "images/iansan.png",
+    "day": "mon",
+    "region": "natlan"
+    },
+     {
+    "id": "baresa",
+    "name_en": "Baresa",
+    "name_kr": "바레사",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "image": "images/baresa.png",
+    "day": "wen",
+    "region": "natlan"
+    },
+     {
+    "id": "inefa",
+    "name_en": "Inefa",
+    "name_kr": "이네파",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "image": "images/inefa.png",
+    "day": "wen",
+    "region": "natlan"
+    },
+     {
+    "id": "kaeya",
+    "name_en": "Kaeya",
+    "name_kr": "케이아",
+    "element": "Cyro",
+    "weapon": "Sword",
+    "image": "images/kaeya.png",
+    "day": "wen",
+    "region": "mond"
+    },
+     {
+    "id": "chongyun",
+    "name_en": "Chongyun",
+    "name_kr": "중운",
+    "element": "Cyro",
+    "weapon": "Claymore",
+    "image": "images/chongyun.png",
+    "day": "tue",
+    "region": "liyue"
+    },
+     {
+    "id": "qiqi",
+    "name_en": "Qiqi",
+    "name_kr": "치치",
+    "element": "Cyro",
+    "weapon": "Sword",
+    "image": "images/qiqi.png",
+    "day": "mon",
+    "region": "liyue"
+    },
+     {
+    "id": "diona",
+    "name_en": "Diona",
+    "name_kr": "디오나",
+    "element": "Cyro",
+    "weapon": "Bow",
+    "image": "images/diona.png",
+    "day": "mon",
+    "region": "mond"
+    },
+     {
+    "id": "ganyu",
+    "name_en": "Ganyu",
+    "name_kr": "감우",
+    "element": "Cyro",
+    "weapon": "Bow",
+    "image": "images/ganyu.png",
+    "day": "tue",
+    "region": "liyue"
+    },
+     {
+    "id": "rosaria",
+    "name_en": "Rosaria",
+    "name_kr": "로자리아",
+    "element": "Cyro",
+    "weapon": "Polearm",
+    "image": "images/rosaria.png",
+    "day": "wen",
+    "region": "mond"
+    },
+     {
+    "id": "eula",
+    "name_en": "Eula",
+    "name_kr": "유라",
+    "element": "Cyro",
+    "weapon": "Claymore",
+    "image": "images/eula.png",
+    "day": "tue",
+    "region": "mond"
+    },
+     {
+    "id": "ayaka",
+    "name_en": "Kamisato Ayaka",
+    "name_kr": "카미사토 아야카",
+    "element": "Cyro",
+    "weapon": "Sword",
+    "image": "images/ayaka.png",
+    "day": "tue",
+    "region": "inazma"
+    },
+     {
+    "id": "shenhe",
+    "name_en": "Shenhe",
+    "name_kr": "신학",
+    "element": "Cyro",
+    "weapon": "Polearm",
+    "image": "images/shenhe.png",
+    "day": "mon",
+    "region": "liyue"
+    },
+     {
+    "id": "layla",
+    "name_en": "Layla",
+    "name_kr": "레일라",
+    "element": "Cyro",
+    "weapon": "Sword",
+    "image": "images/layla.png",
+    "day": "tue",
+    "region": "sumeru"
+    },
+     {
+    "id": "mika",
+    "name_en": "Mika",
+    "name_kr": "미카",
+    "element": "Cyro",
+    "weapon": "Polearm",
+    "image": "images/mika.png",
+    "day": "wen",
+    "region": "mond"
+    },
+     {
+    "id": "son",
+    "name_en": "Freminet",
+    "name_kr": "프레미네",
+    "element": "Cyro",
+    "weapon": "Claymore",
+    "image": "images/son.png",
+    "day": "tue",
+    "region": "fontaine"
+    },
+     {
+    "id": "wrio",
+    "name_en": "Wriothesley",
+    "name_kr": "라이오슬리",
+    "element": "Cyro",
+    "weapon": "Catalyst",
+    "image": "images/wrio.png",
+    "day": "wen",
+    "region": "fontaine"
+    },     
+    {
+    "id": "charlotte",
+    "name_en": "Charlotte",
+    "name_kr": "샤를로트",
+    "element": "Cyro",
+    "weapon": "Catalyst",
+    "image": "images/charlotte.png",
+    "day": "tue",
+    "region": "fontaine"
+    },
+     {
+    "id": "citlali",
+    "name_en": "Citlali",
+    "name_kr": "시틀라리",
+    "element": "Cyro",
+    "weapon": "Catalyst",
+    "image": "images/citlali.png",
+    "day": "tue",
+    "region": "natlan"
+    },
+     {
+    "id": "escoffier",
+    "name_en": "Escoffier",
+    "name_kr": "에스코피에",
+    "element": "Cyro",
+    "weapon": "Polearm",
+    "image": "images/escoffier.png",
+    "day": "tue",
+    "region": "fontaine"
+    },
+     {
+    "id": "skirk",
+    "name_en": "Skirk",
+    "name_kr": "스커크",
+    "element": "Cyro",
+    "weapon": "Sword",
+    "image": "images/skirk.png",
+    "day": "mon",
+    "region": "natlan"
+    },
+     {
+    "id": "collei",
+    "name_en": "Collei",
+    "name_kr": "콜레이",
+    "element": "Dendro",
+    "weapon": "Bow",
+    "image": "images/collei.png",
+    "day": "wen",
+    "region": "sumeru"
+    },
+     {
+    "id": "tighnari",
+    "name_en": "Tighnari",
+    "name_kr": "타이나리",
+    "element": "Dendro",
+    "weapon": "Bow",
+    "image": "images/tighnari.png",
+    "day": "mon",
+    "region": "sumeru"
+    },
+     {
+    "id": "nahida",
+    "name_en": "Nahida",
+    "name_kr": "나히다",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "image": "images/nahida.png",
+    "day": "tue",
+    "region": "sumeru"
+    },
+     {
+    "id": "yaoyao",
+    "name_en": "Yaoyao",
+    "name_kr": "요요",
+    "element": "Dendro",
+    "weapon": "Polearm",
+    "image": "images/yaoyao.png",
+    "day": "tue",
+    "region": "liyue"
+    },
+     {
+    "id": "alhaitham",
+    "name_en": "Alhaitham",
+    "name_kr": "알하이탐",
+    "element": "Dendro",
+    "weapon": "Sword",
+    "image": "images/alhaitham.png",
+    "day": "tue",
+    "region": "sumeru"
+    },
+     {
+    "id": "kaveh",
+    "name_en": "Kaveh",
+    "name_kr": "카베",
+    "element": "Dendro",
+    "weapon": "Claymore",
+    "image": "images/clorinde.png",
+    "day": "tue",
+    "region": "sumeru"
+    },
+     {
+    "id": "baizhu",
+    "name_en": "Baizhu",
+    "name_kr": "백출",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "image": "images/baizhu.png",
+    "day": "wen",
+    "region": "liyue"
+    },
+     {
+    "id": "kirara",
+    "name_en": "Kirara",
+    "name_kr": "키라라",
+    "element": "Dendro",
+    "weapon": "Sword",
+    "image": "images/kirara.png",
+    "day": "mon",
+    "region": "inazma"
+    },
+     {
+    "id": "emilie",
+    "name_en": "Emilie",
+    "name_kr": "에밀리",
+    "element": "Dendro",
+    "weapon": "Polearm",
+    "image": "images/emilie.png",
+    "day": "wen",
+    "region": "fontaine"
+    },
+     {
+    "id": "kinich",
+    "name_en": "Kinich",
+    "name_kr": "키니치",
+    "element": "Dendro",
+    "weapon": "Claymore",
+    "image": "images/kinich.png",
+    "day": "tue",
+    "region": "natlan"
+    },
+     {
+    "id": "sucrose",
+    "name_en": "Sucrose",
+    "name_kr": "설탕",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "image": "images/sucrose.png",
+    "day": "mon",
+    "region": "mond"
+    },
+     {
+    "id": "jean",
+    "name_en": "Jean",
+    "name_kr": "진",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "image": "images/jean.png",
+    "day": "tue",
+    "region": "mond"
+    },
+     {
+    "id": "venti",
+    "name_en": "Venti",
+    "name_kr": "벤티",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "image": "images/venti.png",
+    "day": "wen",
+    "region": "mond"
+    },
+     {
+    "id": "xiao",
+    "name_en": "Xiao",
+    "name_kr": "소",
+    "element": "Anemo",
+    "weapon": "Polearm",
+    "image": "images/xiao.png",
+    "day": "mon",
+    "region": "liyue"
+    },
+     {
+    "id": "kazuha",
+    "name_en": "Kaedehara Kazuha",
+    "name_kr": "카에데하라 카즈하",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "image": "images/kazuha.png",
+    "day": "tue",
+    "region": "liyue"
+    },
+     {
+    "id": "sayu",
+    "name_en": "Sayu",
+    "name_kr": "사유",
+    "element": "Anemo",
+    "weapon": "Claymore",
+    "image": "images/sayu.png",
+    "day": "wen",
+    "region": "inazma"
+    },
+     {
+    "id": "heizou",
+    "name_en": "Shikanoin Heizou",
+    "name_kr": "시카노인 헤이조",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "image": "images/heizou.png",
+    "day": "mon",
+    "region": "inazma"
+    },
+     {
+    "id": "faruzan",
+    "name_en": "Faruzan",
+    "name_kr": "파루잔",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "image": "images/faruzan.png",
+    "day": "mon",
+    "region": "sumeru"
+    },
+     {
+    "id": "wanderer",
+    "name_en": "Wanderer",
+    "name_kr": "방랑자",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "image": "images/wanderer.png",
+    "day": "wen",
+    "region": "sumeru"
+    },
+     {
+    "id": "lynette",
+    "name_en": "Lynette",
+    "name_kr": "리넷",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "image": "images/lynette.png",
+    "day": "wen",
+    "region": "fontaine"
+    },
+     {
+    "id": "xianyun",
+    "name_en": "Xianyun",
+    "name_kr": "한운",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "image": "images/xianyun.png",
+    "day": "wen",
+    "region": "liyue"
+    },
+     {
+    "id": "chasca",
+    "name_en": "Chasca",
+    "name_kr": "차스카",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "image": "images/chasca.png",
+    "day": "wen",
+    "region": "natlan"
+    },
+     {
+    "id": "lanyan",
+    "name_en": "Lan Yan",
+    "name_kr": "남연",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "image": "images/lanyan.png",
+    "day": "tue",
+    "region": "liyue"
+    },
+     {
+    "id": "mizuki",
+    "name_en": "Yumemizuki Mizuki",
+    "name_kr": "유메미즈키 미즈키",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "image": "images/mizuki.png",
+    "day": "mon",
+    "region": "inazma"
+    },
+     {
+    "id": "ifa",
+    "name_en": "Ifa",
+    "name_kr": "이파",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "image": "images/ifa.png",
+    "day": "wen",
+    "region": "natlan"
+    },
+     {
+    "id": "ningguang",
+    "name_en": "Ningguang",
+    "name_kr": "응광",
+    "element": "Geo",
+    "weapon": "Catalyst",
+    "image": "images/ningguang.png",
+    "day": "mon",
+    "region": "liyue"
+    },
+     {
+    "id": "noelle",
+    "name_en": "Noelle",
+    "name_kr": "노엘",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "image": "images/noelle.png",
+    "day": "tue",
+    "region": "mond"
+    },
+     {
+    "id": "zhongli",
+    "name_en": "Zhongli",
+    "name_kr": "종려",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "image": "images/zhongli.png",
+    "day": "wen",
+    "region": "liyue"
+    },
+     {
+    "id": "albedo",
+    "name_en": "Albedo",
+    "name_kr": "알베도",
+    "element": "Geo",
+    "weapon": "Sword",
+    "image": "images/albedo.png",
+    "day": "wen",
+    "region": "mond"
+    },
+     {
+    "id": "gorou",
+    "name_en": "Gorou",
+    "name_kr": "고로",
+    "element": "Geo",
+    "weapon": "Bow",
+    "image": "images/gorou.png",
+    "day": "wen",
+    "region": "inazma"
+    },
+     {
+    "id": "itto",
+    "name_en": "Arataki Itto",
+    "name_kr": "아라타키 이토",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "image": "images/itto.png",
+    "day": "tue",
+    "region": "inazma"
+    },
+     {
+    "id": "yunjin",
+    "name_en": "Yun Jin",
+    "name_kr": "운근",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "image": "images/yunjin.png",
+    "day": "tue",
+    "region": "liyue"
+    },
+     {
+    "id": "navia",
+    "name_en": "Navia",
+    "name_kr": "나비아",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "image": "images/navia.png",
+    "day": "mon",
+    "region": "fontaine"
+    },
+     {
+    "id": "chiori",
+    "name_en": "Chiori",
+    "name_kr": "치오리",
+    "element": "Geo",
+    "weapon": "Sword",
+    "image": "images/chiori.png",
+    "day": "wen",
+    "region": "inazma"
+    },
+     {
+    "id": "kachina",
+    "name_en": "Kachina",
+    "name_kr": "카치나",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "image": "images/kachina.png",
+    "day": "wen",
+    "region": "natlan"
+    },
+     {
+    "id": "xilonen",
+    "name_en": "Xilonen",
+    "name_kr": "실로닌",
+    "element": "Geo",
+    "weapon": "Sword",
+    "image": "images/xilonen.png",
+    "day": "tue",
+    "region": "natlan"
+    }
+]

@@ -1,0 +1,83 @@
+[
+  {
+    "from": 1,
+    "to": 2,
+    "book_low": 3,
+    "book_mid": 0,
+    "book_high": 0,
+    "mora": 12500,
+    "crown": 0
+  },
+  {
+    "from": 2,
+    "to": 3,
+    "book_low": 0,
+    "book_mid": 2,
+    "book_high": 0,
+    "mora": 17500,
+    "crown": 0
+  },
+  {
+    "from": 3,
+    "to": 4,
+    "book_low": 0,
+    "book_mid": 4,
+    "book_high": 0,
+    "mora": 25000,
+    "crown": 0
+  },
+  {
+    "from": 4,
+    "to": 5,
+    "book_low": 0,
+    "book_mid": 6,
+    "book_high": 0,
+    "mora": 30000,
+    "crown": 0
+  },
+  {
+    "from": 5,
+    "to": 6,
+    "book_low": 0,
+    "book_mid": 9,
+    "book_high": 0,
+    "mora": 37500,
+    "crown": 0
+  },
+  {
+    "from": 6,
+    "to": 7,
+    "book_low": 0,
+    "book_mid": 0,
+    "book_high": 4,
+    "mora": 120000,
+    "crown": 0
+  },
+  {
+    "from": 7,
+    "to": 8,
+    "book_low": 0,
+    "book_mid": 0,
+    "book_high": 6,
+    "mora": 260000,
+    "crown": 0
+  },
+  {
+    "from": 8,
+    "to": 9,
+    "book_low": 0,
+    "book_mid": 0,
+    "book_high": 12,
+    "mora": 450000,
+    "crown": 0
+  },
+  {
+    "from": 9,
+    "to": 10,
+    "book_low": 0,
+    "book_mid": 0,
+    "book_high": 16,
+    "mora": 700000,
+    "crown": 1
+  }
+]

@@ -1,0 +1,387 @@
+/* ----------------------------------------
+   Character Growth Calculator - styles.css
+   - Expected HTML structure (example):
+     <div class="app">
+       <header class="app-header">...</header>
+       <main class="card-list"> <!-- container for .character-card items --> </main>
+       <aside class="total-panel">...</aside>
+     </div>
+-----------------------------------------*/
+
+/* Root theme variables */
+:root{
+  --bg: #0f1724;             /* dark navy background */
+  --card: #0b1220;           /* card background */
+  --muted: #9aa6b2;          /* muted text */
+  --text: #e6eef6;           /* main text */
+  --accent: #4fd1c5;         /* teal accent */
+  --accent-2: #7c3aed;       /* purple accent */
+  --danger: #ff6b6b;
+  --glass: rgba(255,255,255,0.04);
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --shadow: 0 6px 18px rgba(2,6,23,0.6);
+  --gap: 16px;
+  --max-width: 1100px;
+  --transition: 180ms cubic-bezier(.2,.9,.3,1);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Page basics */
+*{box-sizing: border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, var(--bg), #07101a 60%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* App container */
+.app{
+  width:100%;
+  max-width:var(--max-width);
+  display:grid;
+  grid-template-columns: 1fr 340px; /* main list + sidebar totals */
+  gap:24px;
+  align-items:start;
+}
+
+/* Header (title + controls) */
+.app-header{
+  grid-column: 1 / -1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:6px;
+}
+.app-title{
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:-0.2px;
+  color:var(--text);
+}
+.header-actions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+/* Main list container */
+.card-list{
+  display:flex;
+  flex-direction:column;
+  gap:var(--gap);
+  padding:12px;
+  border-radius:var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  box-shadow: var(--shadow);
+  min-height: 240px;
+}
+
+/* Single character card */
+.character-card{
+  display:grid;
+  grid-template-columns: 96px 1fr auto;
+  gap:12px;
+  align-items:center;
+  padding:12px;
+  border-radius:12px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.character-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.65);
+}
+
+/* Character image */
+.character-img{
+  width:96px;
+  height:96px;
+  border-radius:12px;
+  overflow:hidden;
+  background:var(--glass);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.character-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Info column */
+.character-info{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width:0;
+}
+.name-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.char-name{
+  font-weight:700;
+  font-size:16px;
+  color:var(--text);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.char-sub{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* Fields grid for levels and traits */
+.fields{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+.field{
+  display:flex;
+  flex-direction:column;
+  min-width:120px;
+}
+.field label{
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.field .value, .field input, .field select {
+  height:36px;
+  border-radius:8px;
+  padding:6px 10px;
+  border:1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color:var(--text);
+  font-size:14px;
+  outline:none;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.field input[type="number"]::-webkit-inner-spin-button,
+.field input[type="number"]::-webkit-outer-spin-button { appearance: auto; }
+
+/* Right-side controls inside card (controls + cost preview) */
+.card-controls{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  align-items:flex-end;
+  justify-content:center;
+}
+.cost-preview{
+  font-weight:700;
+  font-size:14px;
+  color:var(--accent);
+  background: linear-gradient(90deg, rgba(79,209,197,0.08), rgba(124,58,237,0.04));
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid rgba(79,209,197,0.12);
+  min-width:88px;
+  text-align:center;
+}
+
+/* Card action buttons */
+.card-actions{
+  display:flex;
+  gap:6px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:8px 12px;
+  font-size:13px;
+  border-radius:10px;
+  cursor:pointer;
+  border: none;
+  transition: transform var(--transition), box-shadow var(--transition);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color:var(--text);
+  box-shadow: none;
+}
+.btn:hover{ transform: translateY(-3px); box-shadow: 0 8px 18px rgba(2,6,23,0.45); }
+.btn:active{ transform: translateY(-1px); }
+
+.btn-primary{
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color:#012122;
+  font-weight:700;
+  box-shadow: 0 8px 22px rgba(124,58,237,0.12);
+}
+.btn-ghost{
+  background: transparent;
+  border:1px solid rgba(255,255,255,0.04);
+  color:var(--muted);
+}
+.btn-danger{
+  background: linear-gradient(90deg, #ff7b7b, #ff5a5a);
+  color:#2b0f0f;
+  font-weight:700;
+}
+
+/* Empty state */
+.empty-state{
+  padding:28px;
+  border-radius:12px;
+  text-align:center;
+  color:var(--muted);
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+}
+
+/* Sidebar total / summary panel */
+.total-panel{
+  padding:18px;
+  border-radius:var(--radius-md);
+  background: linear-gradient(180deg, rgba(12,20,30,0.6), rgba(8,12,18,0.5));
+  border: 1px solid rgba(255,255,255,0.03);
+  height:fit-content;
+  min-width:240px;
+  position:sticky;
+  top:32px;
+}
+.total-panel h3{
+  margin:0 0 10px 0;
+  font-size:15px;
+  color:var(--text);
+}
+.total-row{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  align-items:center;
+  padding:10px 0;
+  border-bottom:1px dashed rgba(255,255,255,0.02);
+  color:var(--muted);
+}
+.total-row:last-child{ border-bottom: none; }
+.total-value{
+  font-weight:800;
+  color:var(--accent);
+  font-size:18px;
+}
+
+/* Breakdown list (optional) */
+.breakdown{
+  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.breakdown-item{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* Input focus states */
+.field .value:focus, .field input:focus, .field select:focus{
+  box-shadow: 0 6px 18px rgba(124,58,237,0.12);
+  border-color: rgba(124,58,237,0.45);
+}
+
+/* Small helpers */
+.kv{
+  display:flex;
+  gap:6px;
+  align-items:center;
+  font-size:13px;
+}
+.kv .label{ color:var(--muted); font-size:12px; }
+.kv .val{ color:var(--text); font-weight:700; }
+
+/* Responsive behavior */
+@media (max-width: 980px){
+  .app{
+    grid-template-columns: 1fr;
+    padding:12px;
+  }
+  .total-panel{ order: 3; margin-top:6px; position:relative; top:auto; }
+  .app-header{ margin-bottom:12px; flex-direction:column; align-items:stretch; gap:12px; }
+  .character-card{
+    grid-template-columns: 84px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .card-controls{ flex-direction:row; justify-content:space-between; width:100%; grid-column: 1 / -1; margin-top:8px; }
+}
+
+/* Very small screens - compact */
+@media (max-width:420px){
+  :root{ --gap:12px; }
+  .character-img{ width:72px; height:72px; border-radius:10px; }
+  .field{ min-width:100px; }
+  .card-actions .btn{ padding:6px 8px; font-size:12px; border-radius:8px; }
+  .total-value{ font-size:16px; }
+}
+
+/* Accessibility: focus-visible outline for keyboard users */
+:focus{
+  outline: none;
+}
+:focus-visible{
+  outline: 3px solid rgba(79,209,197,0.18);
+  outline-offset: 2px;
+  border-radius:8px;
+}
+
+/* 카드 상단: 원소 옆에 붙는 '시리즈 아이콘'만 숨기기 */
+.character-card .name-row [data-field="element"] > img {
+  display: none;           /* 시리즈 메인 아이콘만 사라짐 */
+}
+
+/* 카드 상단: 가르침/인도/철학 작은 3개 아이콘 */
+.character-card .name-row > div img{
+  width:28px !important;
+  height:28px !important;
+}
+
+/* 우측 합계 패널: 모라/경험치/보라책/왕관 + 시리즈 아이콘들 */
+.total-panel .total-row img{
+  width:28px !important;
+  height:28px !important;
+  margin-right:8px; /* 숫자와 간격 조금 띄우기 */
+}
+
+/* 합계 패널 아이콘/텍스트 수직 정렬 (아이콘 28px 기준) */
+:root { --sum-icon: 28px; }
+
+.total-panel .total-row{
+  align-items: center;                 /* 행 전체 중앙 정렬 */
+  min-height: var(--sum-icon);
+}
+
+.total-panel .total-row > span:first-child{
+  display: inline-flex;                /* 왼쪽(아이콘+문구) 묶음 */
+  align-items: center;
+  gap: 10px;
+  line-height: var(--sum-icon);        /* 텍스트 라인 높이를 아이콘 높이에 맞춤 */
+}
+
+.total-panel .total-row > span:first-child img{
+  width: var(--sum-icon) !important;
+  height: var(--sum-icon) !important;
+  flex-shrink: 0;
+  vertical-align: middle;              /* 미세 베이스라인 보정 */
+}
+
+.total-panel .total-value{
+  line-height: var(--sum-icon);        /* 오른쪽 숫자도 동일 라인 높이 */
+}
